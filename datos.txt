@@ -1,0 +1,4 @@
+1|Ja Morant|Base fino y elegante|Rookie
+2|Zion Williamson|Ala Pivot. 130 kg a 100 km/h|Rookie
+3|Lebron James|El rey. 15 años y le queda gasolina|Veterano
+4|Nikola jokic|Point Center. De todo y todo bien|null
