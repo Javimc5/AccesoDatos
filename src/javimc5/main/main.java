@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,7 +30,7 @@ public class main {
 		}
 		if(opcion==2) {
 			try {
-				pasarFichero();
+				LeerBBDD();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -71,15 +72,19 @@ public class main {
 		  }
 	}
 
-	private static void leerFichero() throws IOException {
+	private static HashMap<Integer,Elemento> leerFichero() throws IOException {
+		HashMap<Integer,Elemento> data=new HashMap<Integer,Elemento>();
 		File file = new File("datos.txt");
 		BufferedReader br = new BufferedReader(new FileReader(file)); 
 		String st; 
-		  while ((st = br.readLine()) != null) 
-		    System.out.println(st); 	   
+		  while ((st = br.readLine()) != null) {
+			  
+		  }
+		    
+		return null; 	   
 	}
 
-	private static void pasarFichero() throws SQLException {
+	private static void LeerBBDD() throws SQLException {
 		Conexion conexion = new Conexion();
 		Connection cn = conexion.conectar();
 		Statement stm = cn.createStatement();
@@ -93,9 +98,9 @@ public class main {
             String charac = rs.getString("caracteristica");
             data.add(id + "|" + name + "|" + desc + "|" + charac);
 		}
-		writeToFile(data, "datos.txt");
+		EscribirFichero(data, "datos.txt");
 	}
-	private static void writeToFile(List<String> list, String path) {
+	private static void EscribirFichero(List<String> list, String path) {
         BufferedWriter out = null;
         try {
                 File file = new File(path);
