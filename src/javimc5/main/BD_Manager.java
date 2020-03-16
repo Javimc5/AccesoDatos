@@ -34,7 +34,10 @@ public class BD_Manager implements Manager{
 		Conexion conexion = new Conexion();
 		Connection cn = conexion.conectar();
 		Statement stm = cn.createStatement();
-		
+		for (Integer a : data.keySet()) {
+			Elemento elem=data.get(a);
+			stm.executeUpdate("Insert into elementos (nombre,descripcion,caracteristica) values ('"+elem.getNombre()+"','"+elem.getDescripcion()+"','"+elem.getCaracteristica()+"')");
+		}
 	}
 
 }
