@@ -1,4 +1,4 @@
-package javimc5.main;
+package javimc5.Controlador;
 
 public class Elemento {
 	private int id;

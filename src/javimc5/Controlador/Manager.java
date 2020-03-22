@@ -1,4 +1,4 @@
-package javimc5.main;
+package javimc5.Controlador;
 
 import java.sql.SQLException;
 import java.util.HashMap;
